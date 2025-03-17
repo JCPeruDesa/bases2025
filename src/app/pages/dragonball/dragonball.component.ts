@@ -33,6 +33,12 @@ export class DragonballComponent {
       power : this.power()
     };
 
-    this.characters().push(newCharacter);
+    this.characters.update((list) => [... list, newCharacter]);
+    this.resetFields();
+  }
+
+  resetFields() {
+    this.name.set('');
+    this.power.set(0);
   }
 }
